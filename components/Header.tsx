@@ -14,7 +14,7 @@ const Header = () => {
 
                     </Link>
                     <Link href={'/account'}>
-                        <button className='px-4 py-2 bg-orange-600 rounded-full'>
+                        <button className='px-4 py-2 bg-orange-500 rounded-full'>
                             <h1 className='text-xl text-white'>Meus pedidos</h1>
 
                         </button>
