@@ -1,10 +1,24 @@
-import React from 'react'
+import {
+  LoginButton,
+  LogoutButton,
+  ProfileButton,
+  RegisterButton,
+} from "@/components/buttons.component";
 
 type Props = {}
 
-const page = (props: Props) => {
+const page = async (props: Props) => {
+
+
   return (
-    <div>piza page</div>
+    <div>
+      <div>
+        <LoginButton />
+        <RegisterButton />
+        <LogoutButton />
+        <ProfileButton />
+      </div>
+    </div>
   )
 }
 

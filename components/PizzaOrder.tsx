@@ -12,6 +12,7 @@ const PizzaOrder: React.FC<PizzaOrderProps> = ({
     sauceType,
     selectedIngredients
 }) => {
+    
     return (
         <div className='border border-gray-300 rounded-lg p-4 flex gap-4 items-start flex-col '>
             <h2 className='text-xl font-semibold'>

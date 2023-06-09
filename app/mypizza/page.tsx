@@ -2,11 +2,15 @@
 
 import PizzaForm from '@/components/PizzaForm'
 import React from 'react'
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
 type Props = {}
 
-const page = (props: Props) => {
+const page = async (props: Props) => {
 
+  const session = await getServerSession(authOptions);
+  const user = session?.user;
   return (
     <div className='w-full py-4'>
       <div className='mb-16'>
@@ -14,7 +18,15 @@ const page = (props: Props) => {
         <h4 className='text-xl font-semibold text-orange-600 text-center'>Escolha sua borda, molho e ingredientes como quiser!</h4>
       </div>
 
-      <PizzaForm />
+
+      {user ? (
+        <PizzaForm />
+      ) : (
+        <h2>
+          faça o login
+        </h2>
+      )}
+
     </div>
   )
 }

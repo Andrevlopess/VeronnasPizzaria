@@ -11,21 +11,20 @@ datasource db {
 }
 
 model User {
-  id       String   @id @default(uuid())
+  id       String @id @default(uuid())
   name     String
-  email    String   @unique
+  email    String @unique
   password String
-  orders   Pizzas[]
 }
 
-model Pizzas {
-  id            String   @id @default(uuid())
-  borderType    String
-  borderFilling String?
-  sauceType     String
-  ingredients   String
-  client        User     @relation(fields: [clientId], references: [id])
-  clientId      String
-  price         Int
-  orderedAt     DateTime @default(now())
-}
+// model Pizzas {
+//   id            String   @id @default(uuid())
+//   borderType    String
+//   borderFilling String?
+//   sauceType     String
+//   ingredients   String
+//   client        User     @relation(fields: [clientId], references: [id])
+//   clientId      String
+//   price         Int
+//   orderedAt     DateTime @default(now())
+// }
