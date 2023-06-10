@@ -2,6 +2,8 @@
 
 import { signIn, signOut } from "next-auth/react";
 import Link from "next/link";
+import {RxExit} from 'react-icons/rx'
+
 
 export const LoginButton = () => {
   return (
@@ -21,8 +23,9 @@ export const RegisterButton = () => {
 
 export const LogoutButton = () => {
   return (
-    <button className="border border-gray-500 hover:border-orange-200 rounded-lg px-4 py-2 transition hover:text-white hover:bg-orange-500 hover:shadow-md " onClick={() => signOut()}>
+    <button className="border border-gray-500 hover:border-orange-200 rounded-lg px-4 py-2 transition hover:text-white hover:bg-orange-500 hover:shadow-md flex items-center gap-2" onClick={() => signOut()}>
       Sair
+      <RxExit/>
     </button>
   );
 };

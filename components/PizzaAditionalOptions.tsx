@@ -12,12 +12,12 @@ interface PizzaAditionalOptionProps {
 }
 
 const PizzaAditionalOptions: React.FC<PizzaAditionalOptionProps> = ({
-  isStuffedBorder
+  isStuffedBorder,
 }) => {
 
 
   return (
-    <div className='border border-gray-300 p-4 flex flex-col rounded-lg gap-6 flex-1 min-w-[500px] '>
+    <div className='border border-gray-300 p-4 flex flex-col rounded-lg gap-6'>
       <h2 className='text-xl font-semibold'>
         Opções adicionais:
       </h2>
@@ -26,7 +26,8 @@ const PizzaAditionalOptions: React.FC<PizzaAditionalOptionProps> = ({
 
           <PizzaOptionGroup
             title='Escolha o sabor da sua borda recheada'
-            onChange={() => { }}
+            onChange={()=>{}}
+            
           >
             <PizzaOption
               image={Queijo}

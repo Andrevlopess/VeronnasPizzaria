@@ -6,7 +6,7 @@ interface ContainerProps {
 
 const Container: React.FC<ContainerProps> = ({ children }) => {
     return (
-        <section className='lg:px-24'>
+        <section className='px-6 py-4 lg:px-24'>
             {children}
         </section>
     )

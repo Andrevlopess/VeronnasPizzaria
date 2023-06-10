@@ -4,6 +4,7 @@ import { PizzaOptionProps } from './PizzaOption'
 interface PizzaOrderProps {
     borderType: PizzaOptionProps;
     sauceType: PizzaOptionProps;
+    borderFilling: "Mussarela" | "Cheddar" | "Cream Cheese"
     selectedIngredients: PizzaOptionProps[]
 }
 
@@ -44,7 +45,7 @@ const PizzaOrder: React.FC<PizzaOrderProps> = ({
                     </h2>
                 </div>
 
-                <div className='border border-gray-300 rounded-lg p-4 flex gap-4 items-center hover:border-orange-300'>
+                <div className='border border-gray-300 rounded-lg p-4 flex gap-4 items-center hover:border-orange-300 flex-wrap'>
                     <h2 className='text-lg font-semibold text-gray-800'>
                         Ingredientes:
                     </h2>

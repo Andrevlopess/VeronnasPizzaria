@@ -53,7 +53,7 @@ const PizzaForm = () => {
 
     const [sauceType, setSauceType] = useState<PizzaOptionProps | null>(null)
     const [borderType, setBorderType] = useState<PizzaOptionProps | null>(null)
-
+    const [borderFilling, setBorderFilling] = useState<"Mussarela" | "Cheddar" | "Cream Cheese">()
     const [selectedIngredients, setSelecteIngredients] = useState<PizzaOptionProps[]>([])
 
     const handleChangeIngredients = (ingredients: PizzaOptionProps[]) => {
@@ -110,8 +110,8 @@ const PizzaForm = () => {
 
 
     return (
-        <div className="border border-gray-300 rounded-lg w-full p-4 flex gap-4 items-start my-6">
-            <div className='gap-8 flex flex-col w-1/2'>
+        <div className="border border-gray-300 rounded-lg w-full p-4 grid gap-4 items-start my-6 md:grid-cols-2 grid-cols-1">
+            <div className='gap-8 flex flex-col'>
                 <div className="flex flex-col space-y-6">
 
                     <PizzaOptionGroup
@@ -180,8 +180,8 @@ const PizzaForm = () => {
 
             </div >
 
-            <div className='flex flex-col sticky top-4 gap-4 w-1/2'>
-                <div className='border border-gray-300 p-4 flex items-center flex-col rounded-lg gap-6 flex-1 min-w-[500px] '>
+            <div className='flex flex-col sticky top-4 gap-4'>
+                <div className='border border-gray-300 p-4 flex items-center flex-col rounded-lg gap-6 '>
                     {borderType ?
                         <>
                             <h2 className='text-xl font-semibold'>
@@ -237,11 +237,15 @@ const PizzaForm = () => {
 
                 </div>
 
-                <PizzaAditionalOptions isStuffedBorder={borderType?.description === 'Borda Recheada'} />
+                <PizzaAditionalOptions
+                 isStuffedBorder={borderType?.description === 'Borda Recheada'} 
+                              
+                 />
 
                 {
-                    borderType && sauceType && selectedIngredients.length &&
+                    borderType && sauceType && selectedIngredients.length !== 0 &&
                     <PizzaOrder
+                        borderFilling='Cheddar'
                         borderType={borderType}
                         sauceType={sauceType}
                         selectedIngredients={selectedIngredients} />

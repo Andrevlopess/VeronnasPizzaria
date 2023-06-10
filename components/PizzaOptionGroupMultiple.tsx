@@ -60,9 +60,10 @@ const PizzaOptionGroupMultiple: React.FC<PizzaOptionGroupMultipleProps> = ({
                 <h3 className='opacity-0 group-hover:opacity-100 transition absolute inset-0 flex justify-center items-center backdrop-blur-sm font-bold text-2xl rounded-lg'>Escolha o item anterior primeiro</h3>
             }
 
-            <h1 className='text-xl font-semibold text-zinc-800'>{title}</h1>
+            <h1 className='text-2xl font-bold text-zinc-800'>{title}</h1>
 
-            <div className="grid grid-cols-4 gap-4">
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {React.Children.map(children, (child) => {
                     const isSelected = selectedOptions.some(selectedOption =>
                         selectedOption.description === (child as React.ReactElement).props.description

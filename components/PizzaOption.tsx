@@ -36,7 +36,7 @@ const PizzaOption = ({
                 height={isIngredient ? 100 : 200}
                 alt={`${description} image`}
             />
-            <h3 className="text-gray-600 font-semibold text-lg">{description}</h3>
+            <h3 className="text-gray-600 font-semibold text-md">{description}</h3>
         </button>
     )
 }

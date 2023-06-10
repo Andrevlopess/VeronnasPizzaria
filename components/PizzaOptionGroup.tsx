@@ -23,7 +23,6 @@ const PizzaOptionGroup: React.FC<PizzaOptionGroupProps> = ({
     const handleOptionChange = (option: PizzaOptionProps) => {
         setSelectedOption(option);
         onChange(option);
-        console.log(selectedOption);
     };
 
     return (
@@ -33,9 +32,9 @@ const PizzaOptionGroup: React.FC<PizzaOptionGroupProps> = ({
             {disabled &&
                 <h3 className='opacity-0 group-hover:opacity-100 transition absolute inset-0 flex justify-center items-center backdrop-blur-sm font-bold text-2xl rounded-lg'>Escolha o item anterior primeiro</h3>
             }
-            <h1 className='text-xl font-semibold text-zinc-800'>{title}</h1>
+            <h1 className='text-2xl font-bold text-zinc-800'>{title}</h1>
 
-            <div className="flex gap-4 flex-wrap items-stretch justify-center">
+            <div className="grid sm:grid-cols-2 gap-4">
                 {React.Children.map(children, (child) =>
                     React.cloneElement(child as React.ReactElement, {
                         isSelected: selectedOption?.description === (child as React.ReactElement).props.description,
