@@ -18,7 +18,7 @@ const Header = async () => {
         <header className='flex flex-col'>
             <div className='flex justify-between items-center py-4 lg:py-6 gap-4'>
                 <Link href={'/'}>
-                    <h1 className='text-xl font-bold text-orange-600'>Veronna&apos;s pizzaria</h1>
+                    <h1 className='text-xl font-bold text-orange-600'>{"Veronna's pizzaria"}</h1>
                 </Link>
 
                 <div className='flex items-center justify-center space-x-4'>

@@ -143,7 +143,7 @@ export default function Home() {
               <span className="text-sm font-normal text-orange-300"> 28/05/2023</span></h1>
 
             <h3 className="text-lg italic text-orange-500 font-semibold">
-              {"Veronna&apos;s Pizzaria é simplesmente incrível! A qualidade das pizzas e o atendimento excepcional me mantêm voltando sempre."}
+              {"Veronna's Pizzaria é simplesmente incrível! A qualidade das pizzas e o atendimento excepcional me mantêm voltando sempre."}
             </h3>
           </div>
           <div className="flex flex-col border-2 border-dashed hover:border-solid hover:shadow-xl transition rounded-md border-orange-300 p-4 gap-4">
@@ -151,7 +151,7 @@ export default function Home() {
               <span className="text-sm font-normal text-orange-300"> 31/02/2023</span></h1>
 
             <h3 className="text-lg italic text-orange-500 font-semibold">
-            {"Veronna&apos;s Pizzaria é simplesmente imbatível quando se trata de qualidade e sabor. Sempre que tenho vontade de uma pizza perfeita, sei exatamente onde ir!"}
+            {"Veronna's Pizzaria é simplesmente imbatível quando se trata de qualidade e sabor. Sempre que tenho vontade de uma pizza perfeita, sei exatamente onde ir!"}
             </h3>
           </div>
           <div className="flex flex-col border-2 border-dashed hover:border-solid hover:shadow-xl transition rounded-md border-orange-300 p-4 gap-4">
@@ -159,7 +159,7 @@ export default function Home() {
               <span className="text-sm font-normal text-orange-300">07/02/2023</span></h1>
 
             <h3 className="text-lg italic text-orange-500 font-semibold">
-             { "A Veronna&apos;s Pizzaria nunca decepciona! Suas pizzas são sempre frescas, saborosas e com uma variedade de sabores que agrada a todos os paladares. Definitivamente, minha escolha número um!"}
+             { "A Veronna's Pizzaria nunca decepciona! Suas pizzas são sempre frescas, saborosas e com uma variedade de sabores que agrada a todos os paladares. Definitivamente, minha escolha número um!"}
             </h3>
           </div>
           <div className="flex flex-col border-2 border-dashed hover:border-solid hover:shadow-xl transition rounded-md border-orange-300 p-4 gap-4">
@@ -168,7 +168,7 @@ export default function Home() {
 
             <h3 className="text-lg italic text-orange-500 font-semibold">
 
-              {"Veronna&apos;s Pizzaria oferece uma combinação perfeita de sabores irresistíveis e um ambiente acolhedor. Sem dúvidas, uma experiência gastronômica memorável!"}
+              {"Veronna's Pizzaria oferece uma combinação perfeita de sabores irresistíveis e um ambiente acolhedor. Sem dúvidas, uma experiência gastronômica memorável!"}
             </h3>
           </div>
 
