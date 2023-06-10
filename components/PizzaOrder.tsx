@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { PizzaOptionProps } from './PizzaOption'
+import LoadingComponent from './LoadingComponent';
 
 interface PizzaOrderProps {
     borderType: PizzaOptionProps;
     sauceType: PizzaOptionProps;
     borderFilling: "Mussarela" | "Cheddar" | "Cream Cheese"
     selectedIngredients: PizzaOptionProps[]
+    message?: string;
 }
 
 const PizzaOrder: React.FC<PizzaOrderProps> = ({
     borderType,
     sauceType,
-    selectedIngredients
+    selectedIngredients,
+    message
 }) => {
-    
+
+
+    const [isLoading, setIsLoading] = useState(false)
+
     return (
         <div className='border border-gray-300 rounded-lg p-4 flex gap-4 items-start flex-col '>
             <h2 className='text-xl font-semibold'>
@@ -61,6 +67,17 @@ const PizzaOrder: React.FC<PizzaOrderProps> = ({
                         }
                     </div>
                 </div>
+                {message &&
+                    <div className='border border-gray-300 rounded-lg p-4 flex gap-4 items-center hover:border-orange-300 group'>
+                        <h2 className='text-lg font-semibold text-gray-800'>
+                            Mensagem:
+                        </h2>
+                        <h3 className='italic text-gray-800 font-semibold'>
+                            {message}
+                        </h3>
+                    </div>
+                }
+
                 <div className='border border-gray-300 rounded-lg p-4 flex gap-4 items-start hover:border-orange-300 justify-between group'>
                     <h2 className='text-lg font-semibold text-gray-800'>
                         Valor
@@ -73,13 +90,26 @@ const PizzaOrder: React.FC<PizzaOrderProps> = ({
                 </div>
             </div>
 
-            <button className='rounded-lg p-4 flex gap-4 items-center hover:border-orange-300 bg-orange-500 focus:ring-2 focus:ring-orange-300 w-full justify-center'>
-                <h2 className='text-xl font-semibold text-white'>
-                    Enviar pedido
-                </h2>
+            <button
+                onClick={() => {
+                    setIsLoading(true)
+                    setTimeout(() => {
+                        setIsLoading(false)
+                    }, 3000)
+                }}
+                className='rounded-lg p-4 flex gap-4 items-center hover:border-orange-300 bg-orange-500 focus:ring-2 focus:ring-orange-300 w-full justify-center'>
+                {isLoading ? (
+                    <LoadingComponent />
+                ) : (
+                    <h2 className='text-xl font-semibold text-white'>
+                        Enviar pedido
+                    </h2>
+
+                )}
+
             </button>
-        </div>      
-  )
+        </div>
+    )
 }
 
 export default PizzaOrder

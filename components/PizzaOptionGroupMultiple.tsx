@@ -57,7 +57,7 @@ const PizzaOptionGroupMultiple: React.FC<PizzaOptionGroupMultipleProps> = ({
 
 
             {disabled &&
-                <h3 className='opacity-0 group-hover:opacity-100 transition absolute inset-0 flex justify-center items-center backdrop-blur-sm font-bold text-2xl rounded-lg'>Escolha o item anterior primeiro</h3>
+                <h3 className='opacity-0 group-hover:opacity-100 transition absolute p-4 inset-0 flex justify-center items-center backdrop-blur-sm font-bold text-2xl rounded-lg text-center'>Escolha o item anterior primeiro</h3>
             }
 
             <h1 className='text-2xl font-bold text-zinc-800'>{title}</h1>

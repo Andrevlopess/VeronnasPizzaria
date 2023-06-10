@@ -24,7 +24,7 @@ const page = async (props: Props) => {
         </>
 
       ) : (
-        <div className='flex flex-col gap-4 items-center justify-center min-h-[60vh] border border-orange-300 border-dashed rounded-lg p-4'>
+        <div className='flex flex-col gap-4 items-center justify-center min-h-[80vh] border border-orange-300 border-dashed rounded-lg p-4'>
           <h1 className='text-2xl md:text-4xl font-black bg-clip-text bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 text-transparent text-center mb-2'>Faça seu login para começar a montar sua pizza!</h1>
           <LoginButton />
         </div>

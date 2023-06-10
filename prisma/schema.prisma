@@ -15,16 +15,24 @@ model User {
   name     String
   email    String @unique
   password String
+  Pizza    Pizza?
 }
 
-// model Pizzas {
-//   id            String   @id @default(uuid())
-//   borderType    String
-//   borderFilling String?
-//   sauceType     String
-//   ingredients   String
-//   client        User     @relation(fields: [clientId], references: [id])
-//   clientId      String
-//   price         Int
-//   orderedAt     DateTime @default(now())
-// }
+model Pizza {
+  id          String   @id @default(uuid())
+  borderType  String
+  sauceType   String
+  ingredients String
+  costumer    User     @relation(fields: [costumerId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  costumerId  String   @unique
+  Orders      Orders[]
+  message     String?
+  price       Int
+}
+
+model Orders {
+  id      String @id @default(uuid())
+  pizza   Pizza  @relation(fields: [pizzaId], references: [id])
+  pizzaId String
+  status  String
+}

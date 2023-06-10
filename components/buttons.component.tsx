@@ -24,7 +24,7 @@ export const RegisterButton = () => {
 export const LogoutButton = () => {
   return (
     <button className="border border-gray-500 hover:border-orange-200 rounded-lg px-4 py-2 transition hover:text-white hover:bg-orange-500 hover:shadow-md flex items-center gap-2" onClick={() => signOut()}>
-      Sair
+      <h3 className="hidden md:flex">Sair</h3>
       <RxExit/>
     </button>
   );

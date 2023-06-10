@@ -10,14 +10,12 @@ import BordaSimplesSvg from '../public/PizzasIllustrations/Borda Simples.svg'
 import Atum from '../public/ingredientes/Atum.svg'
 import Azeitona from '../public/ingredientes/Azeitona.svg'
 import Bacon from '../public/ingredientes/Bacon.svg'
-import BatataPalha from '../public/ingredientes/BatataPalha.svg'
 import Brocolis from '../public/ingredientes/Brocolis.svg'
 import Calabresa from '../public/ingredientes/calabresa.svg'
 import Cebola from '../public/ingredientes/Cebola.svg'
 import Champingnon from '../public/ingredientes/Champingnon.svg'
 import Frango from '../public/ingredientes/Frango.svg'
 import Ovo from '../public/ingredientes/Ovo.svg'
-import Pimentão from '../public/ingredientes/Pimentão.svg'
 import Presunto from '../public/ingredientes/presunto.svg'
 import Queijo from '../public/ingredientes/Queijo.svg'
 import Tomate from '../public/ingredientes/Tomate.svg'
@@ -37,9 +35,10 @@ import BordaGrossaOnPizza from '../public/OnPizza/BordaGrossaOnPizza.svg'
 import BordaRecheadaOnPizza from '../public/OnPizza/BordaRecheadaOnPizza.svg'
 import MolhoDeTomateOnPizza from '../public/OnPizza/MolhoDeTomateOnPizza.svg'
 import MolhoBrancoOnPizza from '../public/OnPizza/MolhoBrancoOnPizza.svg'
-
-
-
+import AzeitonaOnPizza from '../public/OnPizza/AzeitonaOnPizza.svg'
+import OnionOnPizza from '../public/OnPizza/OnionOnPizza.svg'
+import AtumOnPizza from '../public/OnPizza/AtumOnPizza.svg'
+import FrangoOnPizza from '../public/OnPizza/FrangoOnPizza.svg'
 
 import PizzaOption, { PizzaOptionProps } from "./PizzaOption"
 import PizzaOptionGroup from './PizzaOptionGroup'
@@ -54,6 +53,7 @@ const PizzaForm = () => {
     const [sauceType, setSauceType] = useState<PizzaOptionProps | null>(null)
     const [borderType, setBorderType] = useState<PizzaOptionProps | null>(null)
     const [borderFilling, setBorderFilling] = useState<"Mussarela" | "Cheddar" | "Cream Cheese">()
+    const [message, setMessage] = useState<string | undefined>()
     const [selectedIngredients, setSelecteIngredients] = useState<PizzaOptionProps[]>([])
 
     const handleChangeIngredients = (ingredients: PizzaOptionProps[]) => {
@@ -105,7 +105,28 @@ const PizzaForm = () => {
             image: Tomate,
             imageOnPizza: TomatoOnPizza,
             description: "Tomate"
-        }
+        },
+        {
+            image: Cebola,
+            imageOnPizza: OnionOnPizza,
+            description: "Cebola"
+        },
+        {
+            image: Azeitona,
+            imageOnPizza: AzeitonaOnPizza,
+            description: "Azeitona"
+        },
+        {
+            image: Atum,
+            imageOnPizza: AtumOnPizza,
+            description: "Atum"
+        },
+        {
+            image: Frango,
+            imageOnPizza: FrangoOnPizza,
+            description: "Frango"
+        },
+
     ];
 
 
@@ -237,10 +258,26 @@ const PizzaForm = () => {
 
                 </div>
 
-                <PizzaAditionalOptions
-                 isStuffedBorder={borderType?.description === 'Borda Recheada'} 
-                              
-                 />
+                {
+                    borderType?.description === "Borda Recheada" &&
+                    <PizzaAditionalOptions
+                        isStuffedBorder={borderType?.description === 'Borda Recheada'}
+                    />
+                }
+
+                <div className='border border-gray-300 p-4 flex flex-col rounded-lg gap-4'>
+                    <h2 className='text-xl font-semibold'>
+                        Deixar recado:
+                    </h2>
+                    <input
+                        className='border border-gray-300 rounded-md w-full px-4 py-2 outline-none focus:border-orange-400'
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder='Deixe alguma mensagem sobre sua pizza'
+                    />
+                </div>
+
+
+
 
                 {
                     borderType && sauceType && selectedIngredients.length !== 0 &&
@@ -248,6 +285,7 @@ const PizzaForm = () => {
                         borderFilling='Cheddar'
                         borderType={borderType}
                         sauceType={sauceType}
+                        message={message}
                         selectedIngredients={selectedIngredients} />
                 }
 

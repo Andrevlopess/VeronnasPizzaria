@@ -8,14 +8,14 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        wiggle: 'wiggle 1s ease-in-out infinite',
+        sspin: 'sspin 15s linear infinite',
       },
       keyframes: {
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
+        sspin: {
+          'from': { transform: 'rotate(-0deg)' },
+          'to': { transform: 'rotate(360deg)' },
         }
-      }
+      },
     },
   },
   plugins: [],

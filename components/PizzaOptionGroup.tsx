@@ -30,7 +30,8 @@ const PizzaOptionGroup: React.FC<PizzaOptionGroupProps> = ({
             'hover:border-orange-100 transition cursor-not-allowed': disabled,
         })}>
             {disabled &&
-                <h3 className='opacity-0 group-hover:opacity-100 transition absolute inset-0 flex justify-center items-center backdrop-blur-sm font-bold text-2xl rounded-lg'>Escolha o item anterior primeiro</h3>
+                <h3 className='opacity-0 group-hover:opacity-100 transition absolute inset-0 flex justify-center items-center text-center backdrop-blur-sm font-bold text-2xl rounded-lg px-4'>Escolha o item anterior primeiro
+                </h3>
             }
             <h1 className='text-2xl font-bold text-zinc-800'>{title}</h1>
 

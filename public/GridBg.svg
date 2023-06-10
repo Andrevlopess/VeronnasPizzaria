@@ -1,0 +1,16 @@
+<svg width="1000" height="800" viewBox="0 0 1000 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="100" y1="699.5" x2="900" y2="699.5" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="100" y1="599.5" x2="900" y2="599.5" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="100" y1="499.5" x2="900" y2="499.5" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="100" y1="399.5" x2="900" y2="399.5" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="100" y1="299.5" x2="900" y2="299.5" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="100" y1="199.5" x2="900" y2="199.5" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="100" y1="99.5" x2="900" y2="99.5" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="200.5" x2="200.5" y2="800" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="300.5" x2="300.5" y2="800" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="400.5" x2="400.5" y2="800" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="500.5" x2="500.5" y2="800" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="600.5" x2="600.5" y2="800" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="700.5" x2="700.5" y2="800" stroke="#F97316" stroke-dasharray="2 2"/>
+<line x1="800.5" x2="800.5" y2="800" stroke="#F97316" stroke-dasharray="2 2"/>
+</svg>
