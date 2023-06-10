@@ -59,7 +59,7 @@ const PizzaOrder: React.FC<PizzaOrderProps> = ({
 
                         {selectedIngredients.map(ingredient => {
                             return (
-                                <h2 className='text-lg font-semibold text-gray-800 border border-gray-300 p-2 rounded-md hover:border-orange-300'>
+                                <h2 key={ingredient.description} className='text-lg font-semibold text-gray-800 border border-gray-300 p-2 rounded-md hover:border-orange-300'>
                                     {ingredient.description}
                                 </h2>
                             )

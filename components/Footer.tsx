@@ -7,7 +7,7 @@ const Footer = (props: Props) => {
     <footer className='flex flex-col'>
       <div className='w-full border-t border-dashed border-orange-200 flex justify-between my-4 py-12 flex-wrap gap-4'>
         <div>
-          <h1 className='text-xl md:text-2xl font-bold text-orange-500'>Veronnas pizzaria</h1>
+          <h1 className='text-xl md:text-2xl font-bold text-orange-500'>Veronna&apos;s pizzaria</h1>
           <h3 className='text-sm md:text-lg font-semibold text-orange-400'>
             Crie sua própria pizza como quiser!
           </h3>
