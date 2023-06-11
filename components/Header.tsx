@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { LoginButton, LogoutButton } from "@/components/buttons.component";
-import { TfiMenu } from 'react-icons/tfi'
 
 
 const Header = async () => {
@@ -12,7 +11,6 @@ const Header = async () => {
     const session = await getServerSession(authOptions);
     const user = session?.user;
 
-    // const [isOpen, setIsOpen] = useState(false)
 
     return (
         <header className='flex flex-col'>

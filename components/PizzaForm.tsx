@@ -52,7 +52,7 @@ const PizzaForm = () => {
 
     const [sauceType, setSauceType] = useState<PizzaOptionProps | null>(null)
     const [borderType, setBorderType] = useState<PizzaOptionProps | null>(null)
-    const [borderFilling, setBorderFilling] = useState<"Mussarela" | "Cheddar" | "Cream Cheese">()
+    const [borderThickness, setBorderThickness] = useState<PizzaOptionProps | null>(null)
     const [message, setMessage] = useState<string | undefined>()
     const [selectedIngredients, setSelecteIngredients] = useState<PizzaOptionProps[]>([])
 
@@ -136,8 +136,8 @@ const PizzaForm = () => {
                 <div className="flex flex-col space-y-6">
 
                     <PizzaOptionGroup
-                        onChange={(option) => setBorderType(option)}
-                        title="Escolha o tipo da sua borda:">
+                        onChange={(option) => setBorderThickness(option)}
+                        title="Escolha o a grossura da sua borda:">
                         <PizzaOption
                             image={BordaGrossaSvg}
                             imageOnPizza={BordaGrossaOnPizza}
@@ -146,6 +146,11 @@ const PizzaForm = () => {
                             image={BordaFinaSvg}
                             imageOnPizza={BordaFinaOnPizza}
                             description="Borda Fina" />
+                    </PizzaOptionGroup>
+
+                    <PizzaOptionGroup
+                        onChange={(option) => setBorderType(option)}
+                        title="Escolha o tipo da sua borda:">
                         <PizzaOption
                             image={BordaRecheadaSvg}
                             imageOnPizza={BordaRecheadaOnPizza}
@@ -203,7 +208,7 @@ const PizzaForm = () => {
 
             <div className='flex flex-col sticky top-4 gap-4'>
                 <div className='border border-gray-300 p-4 flex items-center flex-col rounded-lg gap-6 '>
-                    {borderType ?
+                    {borderThickness ?
                         <>
                             <h2 className='text-xl font-semibold'>
                                 Veja como está ficando sua pizza
@@ -211,7 +216,17 @@ const PizzaForm = () => {
                             <div className=' flex items-center justify-center h-[200px]
              w-[200px]'>
 
-                                {borderType &&
+                                {borderThickness && borderType?.description !== "Borda Recheada" &&
+                                    <Image
+                                        src={borderThickness.imageOnPizza}
+                                        width={200}
+                                        height={200}
+                                        alt={`${borderThickness.description} image`}
+                                        className='absolute'
+                                        key={borderThickness.description}
+                                    />
+                                }
+                                {borderType?.description === "Borda Recheada" &&
                                     <Image
                                         src={borderType.imageOnPizza}
                                         width={200}
@@ -221,6 +236,7 @@ const PizzaForm = () => {
                                         key={borderType.description}
                                     />
                                 }
+
                                 {
                                     sauceType &&
                                     <Image
@@ -280,9 +296,13 @@ const PizzaForm = () => {
 
 
                 {
-                    borderType && sauceType && selectedIngredients.length !== 0 &&
+                    borderType
+                    && sauceType
+                    && selectedIngredients.length !== 0
+                    && borderThickness
+                    &&
                     <PizzaOrder
-                        borderFilling='Cheddar'
+                        borderThickness={borderThickness}
                         borderType={borderType}
                         sauceType={sauceType}
                         message={message}
