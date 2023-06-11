@@ -15,7 +15,7 @@ const page = async (props: Props) => {
 
   return (
     <div className='w-full py-4'>
-      {user ? (
+      {true ? (
         <>
           <div className='my-8'>
             <h1 className='text-2xl md:text-5xl font-black bg-clip-text bg-gradient-to-r from-orange-600 via-orange-400 to-orange-600 text-transparent text-center mb-2'>Monte uma pizza 100% a sua cara</h1>
