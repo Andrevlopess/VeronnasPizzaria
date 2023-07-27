@@ -8,7 +8,8 @@
 
 
 ## Veronna's pizzaria
-![image](https://github.com/Andrevlopess/VeronnasPizzaria/assets/99695454/5e3f5aa4-002f-4048-8c8a-51bce015a95f)
+![image](https://github.com/Andrevlopess/VeronnasPizzaria/assets/99695454/e03125d0-3fe4-470b-a8fd-519b3f7cfdd5)
+
 
 ## Getting Started
 
